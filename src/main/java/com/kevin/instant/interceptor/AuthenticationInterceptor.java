@@ -32,9 +32,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     /**
      * 白名单，用于去除不需要登录的URI
      */
-    static List<String> whiteList = Arrays.asList(
-        "/login"
-    );
+//    static List<String> whiteList = Arrays.asList(
+//        "/login"
+//    );
 
     /**
      * 请求之前被调用
@@ -46,10 +46,10 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 获取请求的url
-        String url = request.getServletPath();
-        if(whiteList.contains(url)){
-            return true;
-        }
+//        String url = request.getServletPath();
+//        if(whiteList.contains(url)){
+//            return true;
+//        }
         // 如果不是映射到方法直接通过
         if(!(handler instanceof HandlerMethod)){
             return true;

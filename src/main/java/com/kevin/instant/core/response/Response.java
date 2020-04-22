@@ -88,7 +88,7 @@ public class Response implements Serializable {
         this.Success = true;
         this.setCode(RespCode.SUCCESS);
         this.msg = "操作成功";
-        this.time = DateUtil.getTimestamp();
+        this.time = DateUtil.getDefaultDateTime();
     }
 
     public Response(boolean success, Integer code, String msg, String time, Object data) {
@@ -168,7 +168,6 @@ public class Response implements Serializable {
         response.setSuccess(false);
         response.setCode(respCode);
         response.setMsg(msg);
-        response.setTime(DateUtil.getTimestamp());
         response.setData(data);
         return response;
     }
@@ -178,7 +177,6 @@ public class Response implements Serializable {
         response.setSuccess(false);
         response.code = code;
         response.setMsg(msg);
-        response.setTime(DateUtil.getTimestamp());
         response.setData(data);
         return response;
     }

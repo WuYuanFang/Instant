@@ -26,6 +26,6 @@ public class RoleController {
     @GetMapping("/index")
     public Response roleInfo() {
         Role role = roleService.selectById("f58a3ee5-82e6-11ea-9f33-00163e048250");
-        return ResponseUtil.Success(role);
+        return Response.getSuccessResult(role);
     }
 }

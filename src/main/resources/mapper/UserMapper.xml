@@ -30,11 +30,11 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.kevin.instant.entity.User" useGeneratedKeys="true">
-    insert into user (username, `password`, actual_name, 
+    insert into user (id, username, `password`, actual_name,
       id_card, phone, head_path, 
       is_delete, create_user, create_time, 
       last_update_user, last_update_time)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{actualName,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{actualName,jdbcType=VARCHAR},
       #{idCard,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{headPath,jdbcType=VARCHAR}, 
       #{isDelete,jdbcType=INTEGER}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
       #{lastUpdateUser,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=VARCHAR})

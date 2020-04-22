@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @program: Instant
@@ -67,6 +65,7 @@ public class MD5 {
             throw new RuntimeException(e);
         }
     }
+
 
     /**
      * md5签名

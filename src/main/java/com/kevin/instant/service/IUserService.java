@@ -12,6 +12,34 @@ import com.kevin.instant.entity.User;
 
 public interface IUserService {
 
+    /**
+     * 通过用户ID获取用户信息
+     * @param id 用户ID
+     * @return 用户信息
+     */
     public User getUserById(String id);
+
+    /**
+     * 判断用户名是否存在
+     * @param username 用户名
+     * @return 结果
+     */
+    public boolean checkUserIsExistByUserName(String username);
+
+    /**
+     * 通过用户名和密码查询用户信息
+     * @param username 用户名
+     * @param password 密码
+     * @return 用户信息
+     */
+    public User selectByNameAndPwd(String username, String password);
+
+    /**
+     * 添加用户名和密码
+     * @param username 用户名
+     * @param password 密码
+     * @return 用户信息
+     */
+    public User insertUserNameAndPwd(String username, String password);
 
 }
