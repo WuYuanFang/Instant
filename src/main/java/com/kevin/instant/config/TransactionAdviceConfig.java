@@ -26,7 +26,7 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 public class TransactionAdviceConfig {
 
 	//事务扫描配置
-	private static final String AOP_POINTCUT_EXPRESSION = "execution (* com.kevin.instant.*.service.impl.*.*(..)) or (execution (* com.baomidou.mybatisplus.service.impl.*.*(..)))";
+	private static final String AOP_POINTCUT_EXPRESSION = "execution (* com.kevin.instant.service.impl.*.*(..)) or (execution (* com.baomidou.mybatisplus.service.impl.*.*(..)))";
 
 	@Autowired
 	private PlatformTransactionManager transactionManager;

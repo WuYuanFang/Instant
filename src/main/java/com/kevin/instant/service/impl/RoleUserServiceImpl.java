@@ -1,7 +1,7 @@
 package com.kevin.instant.service.impl;
 
 import com.kevin.instant.entity.RoleUser;
-import com.kevin.instant.mapper.RoleUserDao;
+import com.kevin.instant.mapper.IRoleUserDao;
 import com.kevin.instant.service.IRoleUserService;
 import com.kevin.instant.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ import org.springframework.stereotype.Service;
 public class RoleUserServiceImpl implements IRoleUserService {
 
     @Autowired(required = false)
-    private RoleUserDao roleUserDao;
+    private IRoleUserDao IRoleUserDao;
 
     @Override
     public int insertOne(RoleUser roleUser) {
         roleUser.setCreateTime(DateUtil.getDefaultDateTime());
-        int i = roleUserDao.insert(roleUser);
+        int i = IRoleUserDao.insert(roleUser);
         return i;
     }
 }

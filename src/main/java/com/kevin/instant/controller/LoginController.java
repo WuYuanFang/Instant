@@ -41,10 +41,9 @@ public class LoginController {
         if (user != null) {
             UserDetail userDetail = new UserDetail();
             userDetail.setUsername(user.getUsername());
+            userDetail.setNickname(user.getNickname());
+            userDetail.setId(user.getId());
             userDetail.setToken(TokenService.getToken(user.getId()));
-            userDetail.setIdCard(user.getId());
-            userDetail.setActualName(user.getActualName());
-            userDetail.setHeadPath(user.getHeadPath());
             return Response.getSuccessResult("登录成功", userDetail);
         }else{
             return Response.getErrorResult("密码错误");

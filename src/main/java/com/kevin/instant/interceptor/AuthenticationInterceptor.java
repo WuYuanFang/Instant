@@ -44,7 +44,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
      * @return
      */
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws RuntimeException {
         // 获取请求的url
 //        String url = request.getServletPath();
 //        if(whiteList.contains(url)){

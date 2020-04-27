@@ -35,6 +35,18 @@ public class User {
     private String actualName;
 
     /**
+     * 用户昵称
+     */
+    @TableField("nickname")
+    private String nickname;
+
+    /**
+     * 性别：1.男、2.女、3.未知
+     */
+    @TableField("gender")
+    private Integer gender;
+
+    /**
      * 身份证号码
      */
     @TableField("id_card")
@@ -195,5 +207,21 @@ public class User {
 
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
     }
 }

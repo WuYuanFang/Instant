@@ -1,19 +1,16 @@
 package com.kevin.instant.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.kevin.instant.entity.Role;
 import com.kevin.instant.entity.RoleUser;
 import com.kevin.instant.entity.User;
-import com.kevin.instant.mapper.IRoleDao;
+import com.kevin.instant.mapper.IRoleUserDao;
 import com.kevin.instant.mapper.IUserDao;
-import com.kevin.instant.mapper.RoleUserDao;
 import com.kevin.instant.service.IUserService;
 import com.kevin.instant.util.DateUtil;
 import com.kevin.instant.util.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Wrapper;
 import java.util.List;
 import java.util.UUID;
 
@@ -31,7 +28,7 @@ public class UserServiceImpl implements IUserService {
     private IUserDao userDao;
 
     @Autowired(required = false)
-    private RoleUserDao roleUserDao;
+    private IRoleUserDao IRoleUserDao;
 
 
     @Override
@@ -73,10 +70,22 @@ public class UserServiceImpl implements IUserService {
         // 注册的都是普通用户
         roleUser.setRoleCode("1");
         roleUser.setCreateTime(DateUtil.getDefaultDateTime());
-        roleUserDao.insert(roleUser);
+        IRoleUserDao.insert(roleUser);
         if (i > 0) {
             return user;
         }
         return null;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        int result = userDao.updateById(user);
+        return result > 0;
+    }
+
+    @Override
+    public boolean insertUser(User user) {
+        int result = userDao.insert(user);
+        return result > 0;
     }
 }

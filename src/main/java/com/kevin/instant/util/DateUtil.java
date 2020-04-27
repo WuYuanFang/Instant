@@ -1,5 +1,7 @@
 package com.kevin.instant.util;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -450,6 +452,22 @@ public class DateUtil {
 	 */
 	public static String getDefaultDateTime() {
 		return defaultDate2Str(new Date());
+	}
+
+	/**
+	 * 日期路径 即年/月/日 如2018/08/08
+	 */
+	public static String datePath() {
+		Date now = new Date();
+		return DateFormatUtils.format(now, "yyyy/MM/dd");
+	}
+
+	/**
+	 * 日期路径 即年/月/日 如20180808
+	 */
+	public static String dateTime() {
+		Date now = new Date();
+		return DateFormatUtils.format(now, "yyyyMMdd");
 	}
 
 	private static SimpleDateFormat getSimpleDateFormat(String pattern) {

@@ -42,4 +42,17 @@ public interface IUserService {
      */
     public User insertUserNameAndPwd(String username, String password);
 
+    /**
+     * 更新用户信息
+     * @param user 用户信息
+     * @return 结果
+     */
+    public boolean updateUser(User user);
+
+    /**
+     * 添加用户
+     * @param user 用户信息
+     * @return 结果
+     */
+    public boolean insertUser(User user);
 }
